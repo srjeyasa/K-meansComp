@@ -1,4 +1,5 @@
 # Image Compression Using k-means Clustering
+
 This program performs `k-means clustering` using the RGB values of each pixel in an image as features. The thousands of unique colors in the image are essentially averaged to `K` different colors. The outputs at various `K` values are shown below.
 
 Place image to be compressed  `image.png` in `images` folder.
