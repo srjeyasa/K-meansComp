@@ -46,3 +46,6 @@ ax[0].grid(False)
 ax[1].imshow(X_recovered*255)
 ax[1].set_title('Compressed, with %d colors' % K,fontsize=22)
 ax[1].grid(False)
+
+#Save compressed image
+mpl.image.imsave('{}_colors.png'.format(K), X_recovered*255)
