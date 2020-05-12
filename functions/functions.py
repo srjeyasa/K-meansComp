@@ -1,23 +1,7 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May  6 01:17:25 2020
-
-@author: Solomon
-"""
 import numpy as np
 from matplotlib import pyplot
 
 def findClosestCentroids(X, centroids):
-    """
-    X: m x n matrix. m = number of examples, n = dimension
-    centroids: K x n matrix. K = number of clusters, n = dimension
-    returns idx: (m,) vector; m = number of examples. 
-        
-    Computes the closest centroid for every example.
-    Returns vector idx where index of closest centroid to X[i,:] is 
-    stored in idx[i]
-    
-    """
     K = centroids.shape[0]
     idx = np.zeros(X.shape[0], dtype=int)
     prev_dist = 0
@@ -34,17 +18,6 @@ def findClosestCentroids(X, centroids):
     return idx
 
 def computeCentroids(X, idx, K):
-    """
-    Compute new centroids as the mean of all data points assigned to each 
-    centroid.
-    
-    X: m x n matrix. m = number of examples, n = dimension
-    K: number of clusters
-    idx: (m,) vector; m = number of examples. 
-
-    returns: centroids: K x n matrix. K = number of clusters, n = dimension
-    
-    """
     m, n = X.shape
     centroids = np.zeros((K, n))
 
@@ -55,10 +28,6 @@ def computeCentroids(X, idx, K):
 
 def runkMeans(X, K, findClosestCentroids, computeCentroids,
               max_iters=10):
-    """
-    Randomly initializes centroids and runs the K-means algorithm.
-
-    """
     m, n = X.shape
     centroids = np.zeros((K, n))
 
@@ -77,10 +46,6 @@ def runkMeans(X, K, findClosestCentroids, computeCentroids,
     return centroids, idx
 
 def displayData(X):
-    """
-    Displays 2D data stored in X in a grid.
-    
-    """
     # Compute rows, cols
     if X.ndim == 2:
         m, n = X.shape
