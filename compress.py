@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed May  6 01:13:21 2020
-
-@author: Solomon
-"""
-
-
 import os
 import sys
 sys.path.insert(1,'./functions/')
@@ -19,7 +11,6 @@ max_iters = 16
 
 # Load image (.png)
 A = mpl.image.imread(os.path.join('images', 'image.png'))
-# ==========================================================
 
 # Divide by 255 to map values between 0 and 1
 img = A / 255
